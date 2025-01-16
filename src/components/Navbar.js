@@ -28,6 +28,13 @@ function Navbar() {
     setMobileOpen(!mobileOpen);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <>
       <AppBar 
@@ -43,11 +50,18 @@ function Navbar() {
           <Toolbar sx={{ justifyContent: 'space-between', py: 1 }}>
             <Typography 
               variant="h5" 
+              onClick={scrollToTop}
               sx={{ 
                 fontWeight: 700,
                 color: '#64ffda',
                 fontFamily: 'monospace',
                 cursor: 'pointer',
+                transition: 'all 0.3s ease-in-out',
+                '&:hover': {
+                  transform: 'translateY(-2px)',
+                  color: '#a5ffea',
+                },
+                userSelect: 'none',
               }}
             >
               VL
